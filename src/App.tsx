@@ -262,10 +262,11 @@ function App() {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-5 gap-5">
           {Object.entries(platformIcons).map(([platform, Icon]) => {
             const count = posts.filter((p) => p.platform === platform).length
+            const platformKey = platform as Post['platform']
             return (
             <div key={platform} className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 p-5 hover:shadow-xl hover:scale-105 transition-all duration-200 cursor-pointer group">
               <div className="flex items-center space-x-3 mb-4">
-                <div className={`${platformColors[platform]} p-3 rounded-xl shadow-md group-hover:scale-110 transition-transform duration-200`}>
+                <div className={`${platformColors[platformKey]} p-3 rounded-xl shadow-md group-hover:scale-110 transition-transform duration-200`}>
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <span className="font-bold capitalize text-gray-900 text-lg">{platform}</span>
@@ -321,8 +322,7 @@ function App() {
                           : 'border-gray-200 hover:border-indigo-200 hover:shadow-md hover:scale-102'
                       }`}
                     >
-                      <div className={formData.platform === platform ? platformColors[platform] : 'bg-gray-100'}
-                           className={`${formData.platform === platform ? platformColors[platform] : 'bg-gray-100'} p-2 rounded-lg mb-2 transition-all duration-200`}>
+                      <div className={`${formData.platform === platform ? platformColors[platform as Post['platform']] : 'bg-gray-100'} p-2 rounded-lg mb-2 transition-all duration-200`}>
                         <Icon className="w-6 h-6 mx-auto text-white" />
                       </div>
                       <span className={`text-xs font-semibold block capitalize ${
