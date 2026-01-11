@@ -1,0 +1,111 @@
+version: "6.0.0"
+project_name: "Social Media Planner"
+project_level: 2
+current_sprint: 1
+sprint_plan_path: "docs/sprint-plan-social-media-planner-2026-01-10.md"
+
+sprints:
+  - sprint_number: 1
+    start_date: "2026-01-13"
+    end_date: "2026-01-17"
+    capacity_points: 4
+    committed_points: 4
+    completed_points: 4
+    status: "completed"
+    goal: "Fondation authentification - Configuration Supabase Auth et OpenAI"
+    stories:
+      - story_id: "STORY-001"
+        title: "Configuration Supabase Auth"
+        points: 3
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-10"
+      - story_id: "STORY-005"
+        title: "Configuration OpenAI API (début)"
+        points: 1
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-10"
+
+  - sprint_number: 2
+    start_date: "2026-01-20"
+    end_date: "2026-01-24"
+    capacity_points: 4
+    committed_points: 4
+    completed_points: 1
+    status: "in_progress"
+    goal: "Page d'inscription utilisateur"
+    stories:
+      - story_id: "STORY-002"
+        title: "Page d'inscription utilisateur"
+        points: 3
+        status: "not_started"
+        assigned_to: "Sami"
+      - story_id: "STORY-005"
+        title: "Configuration OpenAI API (suite)"
+        points: 1
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-11"
+
+  - sprint_number: 3
+    start_date: "2026-01-27"
+    end_date: "2026-01-31"
+    capacity_points: 4
+    committed_points: 4
+    completed_points: 0
+    status: "not_started"
+    goal: "Page de connexion"
+    stories:
+      - story_id: "STORY-003"
+        title: "Page de connexion utilisateur"
+        points: 3
+        status: "not_started"
+        assigned_to: "Sami"
+      - story_id: "STORY-006"
+        title: "Système de prompts IA (début)"
+        points: 1
+        status: "not_started"
+        assigned_to: "Sami"
+
+  - sprint_number: 4
+    start_date: "2026-02-03"
+    end_date: "2026-02-07"
+    capacity_points: 4
+    committed_points: 4
+    completed_points: 0
+    status: "not_started"
+    goal: "Dashboard et navigation"
+    stories:
+      - story_id: "STORY-004"
+        title: "Dashboard et déconnexion"
+        points: 4
+        status: "not_started"
+        assigned_to: "Sami"
+
+velocity:
+  sprint_1: 4
+  sprint_2: null
+  sprint_3: null
+  sprint_4: null
+  rolling_average: 4
+
+team:
+  size: 1
+  sprint_length_weeks: 1
+  hours_per_week: 12
+  capacity_per_sprint: 4
+
+milestones:
+  - name: "MVP Complete"
+    target_sprint: 15
+    stories_count: 18
+    description: "Génération IA + Gestion contenu + Copie manuelle"
+  - name: "Phase 2 Complete"
+    target_sprint: 22
+    stories_count: 27
+    description: "Calendrier + Templates + Médias"
+  - name: "Full Product"
+    target_sprint: 28
+    stories_count: 32
+    description: "Publication automatique LinkedIn/Instagram"
