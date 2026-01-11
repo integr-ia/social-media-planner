@@ -1,13 +1,16 @@
 version: "6.0.0"
 project_name: "Social Media Planner"
 project_level: 2
-current_sprint: 1
+current_sprint: 5
 sprint_plan_path: "docs/sprint-plan-social-media-planner-2026-01-10.md"
+
+# IMPORTANT: Before starting any story, check docs/story-implementation-map.md
+# to verify if the code already exists!
 
 sprints:
   - sprint_number: 1
-    start_date: "2026-01-13"
-    end_date: "2026-01-17"
+    start_date: "2026-01-10"
+    end_date: "2026-01-10"
     capacity_points: 4
     committed_points: 4
     completed_points: 4
@@ -20,48 +23,67 @@ sprints:
         status: "completed"
         assigned_to: "Sami"
         completed_at: "2026-01-10"
+        implementation_files:
+          - "src/lib/supabase.ts"
+          - "src/contexts/AuthContext.tsx"
+          - "src/components/routing/ProtectedRoute.tsx"
       - story_id: "STORY-005"
         title: "Configuration OpenAI API (début)"
         points: 1
         status: "completed"
         assigned_to: "Sami"
         completed_at: "2026-01-10"
+        implementation_files:
+          - "src/lib/ai/config.ts"
 
   - sprint_number: 2
-    start_date: "2026-01-20"
-    end_date: "2026-01-24"
+    start_date: "2026-01-10"
+    end_date: "2026-01-10"
     capacity_points: 4
     committed_points: 4
-    completed_points: 1
-    status: "in_progress"
+    completed_points: 4
+    status: "completed"
     goal: "Page d'inscription utilisateur"
     stories:
       - story_id: "STORY-002"
         title: "Page d'inscription utilisateur"
         points: 3
-        status: "not_started"
+        status: "completed"
         assigned_to: "Sami"
+        completed_at: "2026-01-10"
+        implementation_files:
+          - "src/pages/auth/RegisterPage.tsx"
+          - "src/components/ui/Input.tsx"
+          - "src/components/ui/Button.tsx"
+          - "src/components/ui/Alert.tsx"
       - story_id: "STORY-005"
         title: "Configuration OpenAI API (suite)"
         points: 1
         status: "completed"
         assigned_to: "Sami"
         completed_at: "2026-01-11"
+        implementation_files:
+          - "src/lib/ai/client.ts"
+          - "src/lib/ai/openai.ts"
+          - "src/lib/ai/index.ts"
 
   - sprint_number: 3
-    start_date: "2026-01-27"
-    end_date: "2026-01-31"
+    start_date: "2026-01-10"
+    end_date: "2026-01-10"
     capacity_points: 4
     committed_points: 4
-    completed_points: 0
-    status: "not_started"
+    completed_points: 4
+    status: "completed"
     goal: "Page de connexion"
     stories:
       - story_id: "STORY-003"
         title: "Page de connexion utilisateur"
         points: 3
-        status: "not_started"
+        status: "completed"
         assigned_to: "Sami"
+        completed_at: "2026-01-10"
+        implementation_files:
+          - "src/pages/auth/LoginPage.tsx"
       - story_id: "STORY-006"
         title: "Système de prompts IA (début)"
         points: 1
@@ -69,25 +91,65 @@ sprints:
         assigned_to: "Sami"
 
   - sprint_number: 4
-    start_date: "2026-02-03"
-    end_date: "2026-02-07"
+    start_date: "2026-01-10"
+    end_date: "2026-01-10"
     capacity_points: 4
     committed_points: 4
-    completed_points: 0
-    status: "not_started"
+    completed_points: 4
+    status: "completed"
     goal: "Dashboard et navigation"
     stories:
       - story_id: "STORY-004"
         title: "Dashboard et déconnexion"
         points: 4
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-10"
+        implementation_files:
+          - "src/pages/dashboard/DashboardPage.tsx"
+          - "src/components/layout/AppLayout.tsx"
+          - "src/main.tsx"
+
+  - sprint_number: 5
+    start_date: "2026-01-13"
+    end_date: "2026-01-17"
+    capacity_points: 4
+    committed_points: 4
+    completed_points: 0
+    status: "not_started"
+    goal: "Prompts et API génération idées"
+    stories:
+      - story_id: "STORY-006"
+        title: "Système de prompts (suite)"
+        points: 2
+        status: "not_started"
+        assigned_to: "Sami"
+      - story_id: "STORY-013"
+        title: "Modèle de données posts"
+        points: 2
+        status: "not_started"
+        assigned_to: "Sami"
+
+  - sprint_number: 6
+    start_date: "2026-01-20"
+    end_date: "2026-01-24"
+    capacity_points: 5
+    committed_points: 5
+    completed_points: 0
+    status: "not_started"
+    goal: "API génération d'idées"
+    stories:
+      - story_id: "STORY-007"
+        title: "API génération d'idées"
+        points: 5
         status: "not_started"
         assigned_to: "Sami"
 
 velocity:
   sprint_1: 4
-  sprint_2: null
-  sprint_3: null
-  sprint_4: null
+  sprint_2: 4
+  sprint_3: 4
+  sprint_4: 4
   rolling_average: 4
 
 team:
@@ -95,6 +157,17 @@ team:
   sprint_length_weeks: 1
   hours_per_week: 12
   capacity_per_sprint: 4
+
+progress_summary:
+  total_points_completed: 16
+  total_stories_completed: 5
+  stories_completed:
+    - "STORY-001"
+    - "STORY-002"
+    - "STORY-003"
+    - "STORY-004"
+    - "STORY-005"
+  next_story: "STORY-006"
 
 milestones:
   - name: "MVP Complete"
