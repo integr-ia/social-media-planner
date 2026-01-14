@@ -1,7 +1,7 @@
 version: "6.0.0"
 project_name: "Social Media Planner"
 project_level: 2
-current_sprint: 5
+current_sprint: 16
 sprint_plan_path: "docs/sprint-plan-social-media-planner-2026-01-10.md"
 
 # IMPORTANT: Before starting any story, check docs/story-implementation-map.md
@@ -69,7 +69,7 @@ sprints:
 
   - sprint_number: 3
     start_date: "2026-01-10"
-    end_date: "2026-01-10"
+    end_date: "2026-01-11"
     capacity_points: 4
     committed_points: 4
     completed_points: 4
@@ -87,8 +87,12 @@ sprints:
       - story_id: "STORY-006"
         title: "Système de prompts IA (début)"
         points: 1
-        status: "not_started"
+        status: "completed"
         assigned_to: "Sami"
+        completed_at: "2026-01-11"
+        implementation_files:
+          - "src/types/prompts.ts"
+          - "src/lib/ai/prompts/context.ts"
 
   - sprint_number: 4
     start_date: "2026-01-10"
@@ -115,42 +119,299 @@ sprints:
     end_date: "2026-01-17"
     capacity_points: 4
     committed_points: 4
-    completed_points: 0
-    status: "not_started"
+    completed_points: 4
+    status: "completed"
     goal: "Prompts et API génération idées"
     stories:
       - story_id: "STORY-006"
         title: "Système de prompts (suite)"
         points: 2
-        status: "not_started"
+        status: "completed"
         assigned_to: "Sami"
+        completed_at: "2026-01-11"
+        implementation_files:
+          - "src/lib/ai/prompts/index.ts"
+          - "src/lib/ai/prompts/registry.ts"
+          - "src/lib/ai/prompts/schemas.ts"
+          - "src/lib/ai/prompts/templates/ideas.ts"
+          - "src/lib/ai/prompts/templates/linkedin.ts"
+          - "src/lib/ai/prompts/templates/instagram.ts"
+          - "supabase/functions/_shared/prompts.ts"
       - story_id: "STORY-013"
         title: "Modèle de données posts"
         points: 2
-        status: "not_started"
+        status: "completed"
         assigned_to: "Sami"
+        completed_at: "2026-01-11"
+        implementation_files:
+          - "src/lib/content/posts.ts"
+          - "src/lib/content/index.ts"
+          - "src/hooks/usePosts.ts"
+          - "src/hooks/usePost.ts"
+          - "src/types/index.ts"
+          - "src/types/database.ts"
 
   - sprint_number: 6
     start_date: "2026-01-20"
     end_date: "2026-01-24"
     capacity_points: 5
     committed_points: 5
-    completed_points: 0
-    status: "not_started"
+    completed_points: 5
+    status: "completed"
     goal: "API génération d'idées"
     stories:
       - story_id: "STORY-007"
         title: "API génération d'idées"
         points: 5
-        status: "not_started"
+        status: "completed"
         assigned_to: "Sami"
+        completed_at: "2026-01-11"
+        implementation_files:
+          - "supabase/functions/generate-ideas/index.ts"
+          - "supabase/functions/get-ai-quota/index.ts"
+          - "supabase/functions/_shared/prompts.ts"
+          - "src/lib/ai/client.ts"
+          - "src/types/ai.ts"
+          - "src/hooks/useGenerateIdeas.ts"
+          - "src/hooks/useAIQuota.ts"
+          - "src/hooks/index.ts"
+
+  - sprint_number: 7
+    start_date: "2026-01-12"
+    end_date: "2026-01-12"
+    capacity_points: 5
+    committed_points: 5
+    completed_points: 5
+    status: "completed"
+    goal: "Interface génération d'idées"
+    stories:
+      - story_id: "STORY-008"
+        title: "Interface génération d'idées"
+        points: 5
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-12"
+        implementation_files:
+          - "src/pages/generate/GeneratePage.tsx"
+          - "src/pages/generate/index.ts"
+          - "src/components/generate/IdeaCard.tsx"
+          - "src/components/generate/IdeaCardSkeleton.tsx"
+          - "src/components/generate/QuotaDisplay.tsx"
+          - "src/components/generate/index.ts"
+          - "src/main.tsx"
+          - "src/components/layout/AppLayout.tsx"
+          - "src/pages/dashboard/DashboardPage.tsx"
+
+  - sprint_number: 8
+    start_date: "2026-01-12"
+    end_date: "2026-01-12"
+    capacity_points: 4
+    committed_points: 3
+    completed_points: 3
+    status: "completed"
+    goal: "Sélection d'idées"
+    stories:
+      - story_id: "STORY-009"
+        title: "Sélection d'idées"
+        points: 3
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-12"
+        implementation_files:
+          - "src/stores/useIdeaSelection.ts"
+          - "src/stores/index.ts"
+          - "src/pages/generate/GeneratePage.tsx"
+          - "src/components/generate/IdeaCard.tsx"
+
+  - sprint_number: 9
+    start_date: "2026-01-13"
+    end_date: "2026-01-13"
+    capacity_points: 5
+    committed_points: 5
+    completed_points: 5
+    status: "completed"
+    goal: "Génération posts LinkedIn"
+    stories:
+      - story_id: "STORY-010"
+        title: "API génération post LinkedIn"
+        points: 5
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-13"
+        implementation_files:
+          - "supabase/functions/generate-post/index.ts"
+          - "src/hooks/useGeneratePost.ts"
+          - "src/hooks/index.ts"
+          - "src/types/ai.ts"
+
+  - sprint_number: 10
+    start_date: "2026-01-13"
+    end_date: "2026-01-13"
+    capacity_points: 5
+    committed_points: 5
+    completed_points: 5
+    status: "completed"
+    goal: "Génération captions Instagram"
+    stories:
+      - story_id: "STORY-011"
+        title: "API génération caption Instagram"
+        points: 5
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-13"
+        implementation_files:
+          - "supabase/functions/generate-post/index.ts"
+          - "supabase/functions/_shared/prompts.ts"
+          - "src/types/ai.ts"
+
+  - sprint_number: 11
+    start_date: "2026-01-13"
+    end_date: "2026-01-13"
+    capacity_points: 4
+    committed_points: 3
+    completed_points: 3
+    status: "completed"
+    goal: "Workflow batch et liste posts"
+    stories:
+      - story_id: "STORY-012"
+        title: "Workflow génération batch"
+        points: 3
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-13"
+        implementation_files:
+          - "src/hooks/useBatchGeneration.ts"
+          - "src/components/generate/BatchGenerationModal.tsx"
+          - "src/pages/generate/GeneratePage.tsx"
+          - "src/pages/posts/PostsPage.tsx"
+          - "src/pages/posts/index.ts"
+          - "src/main.tsx"
+          - "src/components/layout/AppLayout.tsx"
+
+  - sprint_number: 12
+    start_date: "2026-01-13"
+    end_date: "2026-01-13"
+    capacity_points: 4
+    committed_points: 4
+    completed_points: 4
+    status: "completed"
+    goal: "Liste des posts complète"
+    stories:
+      - story_id: "STORY-014"
+        title: "Liste des posts (brouillons)"
+        points: 4
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-13"
+        implementation_files:
+          - "src/pages/posts/PostsPage.tsx"
+          - "src/hooks/useDebounce.ts"
+          - "src/hooks/index.ts"
+
+  - sprint_number: 13
+    start_date: "2026-01-13"
+    end_date: "2026-01-13"
+    capacity_points: 5
+    committed_points: 5
+    completed_points: 5
+    status: "completed"
+    goal: "Éditeur de post"
+    stories:
+      - story_id: "STORY-015"
+        title: "Éditeur de post"
+        points: 5
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-13"
+        implementation_files:
+          - "src/pages/posts/PostEditPage.tsx"
+          - "src/pages/posts/index.ts"
+          - "src/main.tsx"
+
+  - sprint_number: 14
+    start_date: "2026-01-14"
+    end_date: "2026-01-14"
+    capacity_points: 4
+    committed_points: 3
+    completed_points: 3
+    status: "completed"
+    goal: "Auto-save et preview"
+    stories:
+      - story_id: "STORY-016"
+        title: "Sauvegarde automatique"
+        points: 3
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-14"
+        implementation_files:
+          - "src/hooks/useAutoSave.ts"
+          - "src/lib/content/posts.ts"
+          - "src/pages/posts/PostEditPage.tsx"
+          - "src/hooks/index.ts"
+          - "src/lib/content/index.ts"
+
+  - sprint_number: 15
+    start_date: "2026-01-14"
+    end_date: "2026-01-14"
+    capacity_points: 4
+    committed_points: 4
+    completed_points: 4
+    status: "completed"
+    goal: "Preview et copie"
+    stories:
+      - story_id: "STORY-017"
+        title: "Prévisualisation de post"
+        points: 4
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-14"
+        implementation_files:
+          - "src/components/posts/PostPreview.tsx"
+          - "src/components/posts/index.ts"
+          - "src/pages/posts/PostEditPage.tsx"
+
+  - sprint_number: 16
+    start_date: "2026-01-14"
+    end_date: "2026-01-14"
+    capacity_points: 3
+    committed_points: 3
+    completed_points: 3
+    status: "completed"
+    goal: "Copie rapide pour publication manuelle - MVP COMPLETE"
+    stories:
+      - story_id: "STORY-018"
+        title: "Copie rapide pour publication manuelle"
+        points: 3
+        status: "completed"
+        assigned_to: "Sami"
+        completed_at: "2026-01-14"
+        implementation_files:
+          - "src/components/posts/CopyButtons.tsx"
+          - "src/components/posts/index.ts"
+          - "src/lib/content/copy.ts"
+          - "src/lib/content/index.ts"
+          - "src/pages/posts/PostEditPage.tsx"
+          - "src/pages/posts/PostsPage.tsx"
+          - "src/main.tsx"
 
 velocity:
   sprint_1: 4
   sprint_2: 4
   sprint_3: 4
   sprint_4: 4
-  rolling_average: 4
+  sprint_5: 4
+  sprint_6: 5
+  sprint_7: 5
+  sprint_8: 3
+  sprint_9: 5
+  sprint_10: 5
+  sprint_11: 3
+  sprint_12: 4
+  sprint_13: 5
+  sprint_14: 3
+  sprint_15: 4
+  sprint_16: 3
+  rolling_average: 4.1
 
 team:
   size: 1
@@ -159,15 +420,28 @@ team:
   capacity_per_sprint: 4
 
 progress_summary:
-  total_points_completed: 16
-  total_stories_completed: 5
+  total_points_completed: 66
+  total_stories_completed: 18
   stories_completed:
     - "STORY-001"
     - "STORY-002"
     - "STORY-003"
     - "STORY-004"
     - "STORY-005"
-  next_story: "STORY-006"
+    - "STORY-006"
+    - "STORY-007"
+    - "STORY-008"
+    - "STORY-009"
+    - "STORY-010"
+    - "STORY-011"
+    - "STORY-012"
+    - "STORY-013"
+    - "STORY-014"
+    - "STORY-015"
+    - "STORY-016"
+    - "STORY-017"
+    - "STORY-018"
+  next_story: "STORY-019"
 
 milestones:
   - name: "MVP Complete"

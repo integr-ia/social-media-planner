@@ -17,6 +17,54 @@ export {
 } from './openai'
 export type { OpenAIClientConfig } from './openai'
 
+// Prompt templates system (STORY-006)
+export {
+  // Context injection
+  INTEGRIA_BRAND_CONTEXT,
+  injectBrandContext,
+  formatBrandContext,
+  SWISS_FRENCH_GUIDELINES,
+  AUDIENCE_INSIGHTS,
+  // Registry
+  PROMPT_REGISTRY,
+  getPromptTemplate,
+  compilePrompt,
+  getTemplateVersion,
+  getAvailableTemplates,
+  isTemplateImplemented,
+  getTemplateMetadata,
+  TEMPLATE_VERSION_HISTORY,
+  // Templates
+  IDEAS_PROMPT_TEMPLATE,
+  compileIdeasPrompt,
+  LINKEDIN_POST_PROMPT_TEMPLATE,
+  compileLinkedInPrompt,
+  INSTAGRAM_CAPTION_PROMPT_TEMPLATE,
+  compileInstagramPrompt,
+  SUGGESTED_HASHTAGS,
+  // Schemas
+  IDEAS_OUTPUT_SCHEMA,
+  LINKEDIN_POST_OUTPUT_SCHEMA,
+  INSTAGRAM_CAPTION_OUTPUT_SCHEMA,
+  VARIANTS_OUTPUT_SCHEMA,
+  schemaToPromptString,
+} from './prompts'
+
+// Prompt types
+export type {
+  PromptTemplate,
+  PromptVersion,
+  PromptVariables,
+  CompiledPrompt,
+  OutputSchema,
+  SchemaProperty,
+  BrandContext,
+  GenerationType,
+  ContentCategory,
+  PromptRegistry,
+  PromptRegistryEntry,
+} from './prompts'
+
 // Re-export types for convenience
 export type {
   ContentIdea,

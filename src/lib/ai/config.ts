@@ -12,9 +12,9 @@ export const AI_CONFIG = {
   maxTokensVariants: 1500,
 
   // Timeouts (in milliseconds)
-  timeoutIdeas: 30000, // 30 seconds for ideas
-  timeoutPost: 15000,  // 15 seconds for single post
-  timeoutVariants: 20000, // 20 seconds for variants
+  timeoutIdeas: 120000, // 2 minutes for ideas (OpenAI can be slow)
+  timeoutPost: 60000,   // 1 minute for single post
+  timeoutVariants: 60000, // 1 minute for variants
 
   // Temperature settings (creativity)
   temperatureIdeas: 0.8,  // More creative for ideas

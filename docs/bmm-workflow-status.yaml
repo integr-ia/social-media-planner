@@ -1,0 +1,102 @@
+project_name: "Social Media Planner"
+project_type: "web-app"
+project_level: 2
+initialized_at: "2026-01-06T00:00:00Z"
+last_updated: "2026-01-10T16:00:00Z"
+
+# Phase 1: Analysis
+workflows:
+  product-brief:
+    phase: 1
+    agent: "Business Analyst"
+    status: "completed"
+    required: "recommended"
+    output: "docs/product-brief-social-media-planner-2026-01-06.md"
+    last_updated: "2026-01-06T12:00:00Z"
+
+  # Phase 2: Design (Level 2+)
+  prd:
+    phase: 2
+    agent: "Product Manager"
+    status: "completed"
+    required: "required"
+    output: "docs/prd-social-media-planner-2026-01-06.md"
+    last_updated: "2026-01-06T14:00:00Z"
+    dependencies: ["product-brief"]
+
+  tech-spec:
+    phase: 2
+    agent: "Product Manager"
+    status: "not_started"
+    required: "optional"
+    output: null
+    last_updated: null
+    dependencies: ["product-brief"]
+
+  # Phase 3: Architecture (Level 2+)
+  architecture:
+    phase: 3
+    agent: "System Architect"
+    status: "completed"
+    required: "required"
+    output: "docs/architecture-social-media-planner-2026-01-10-part[1-4].md"
+    output_files:
+      - "docs/architecture-social-media-planner-2026-01-10-part1.md"
+      - "docs/architecture-social-media-planner-2026-01-10-part2.md"
+      - "docs/architecture-social-media-planner-2026-01-10-part3.md"
+      - "docs/architecture-social-media-planner-2026-01-10-part4.md"
+    last_updated: "2026-01-10T15:30:00Z"
+    dependencies: ["prd"]
+
+  solutioning-gate-check:
+    phase: 3
+    agent: "System Architect"
+    status: "not_started"
+    required: "recommended"
+    output: null
+    last_updated: null
+    dependencies: ["architecture"]
+
+  # Phase 4: Build
+  sprint-planning:
+    phase: 4
+    agent: "Scrum Master"
+    status: "completed"
+    required: "required"
+    output: "docs/sprint-plan-social-media-planner-2026-01-10.md"
+    sprint_status: "docs/sprint-status.yaml"
+    last_updated: "2026-01-10T16:00:00Z"
+    dependencies: ["architecture", "solutioning-gate-check"]
+    summary:
+      total_stories: 32
+      total_points: 98
+      mvp_stories: 18
+      mvp_points: 66
+      sprints_planned: 28
+      mvp_sprints: 15
+
+  create-story:
+    phase: 4
+    agent: "Scrum Master"
+    status: "not_started"
+    required: "required"
+    output: null
+    last_updated: null
+    dependencies: ["sprint-planning"]
+
+  dev-story:
+    phase: 4
+    agent: "Developer"
+    status: "not_started"
+    required: "required"
+    output: null
+    last_updated: null
+    dependencies: ["create-story"]
+
+# Sprint tracking (populated by sprint-planning)
+sprints: []
+
+# Current phase progress
+current_phase: 4
+phases_completed: [1, 2, 3, 4]
+next_action: "Start Sprint 1 - Run /dev-story STORY-001"
